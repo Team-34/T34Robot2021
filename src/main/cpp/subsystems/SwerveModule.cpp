@@ -53,31 +53,21 @@ void SwerveModule::SetDriveSpeed(const double & speed)
 
 void SwerveModule::SetSteerPosition(const double & position, double offset)
 {
-    double current_position = m_steer->GetSensorCollection().GetIntegratedSensorPosition();
- //   double normalized_position = current_position / FULL_UNITS;fmod(current_position, FULL_UNITS);
-	double set_point = ((position + offset) / 360.0) * FULL_UNITS;
+    double current_position = m_steer->GetSelectedSensorPosition(); //->GetSensorCollection().GetIntegratedSensorPosition();
+ 	double set_point = ((position + offset) / 360.0) * FULL_UNITS;
 
-/*
-    if(fabs(set_point - current_position) > 18432)
+    double rotations = 0.0;
+    double delta = modf(set_point - current_position, &rotations);
+
+    if(fabs(delta) > 9216.0) // 90 degrees
     {
-        set_point = set_point + 18432;
+        delta -= copysign(18432.0, delta);
         m_invert = -1.0;
     }
-*/
-    if (set_point > 18432)
-    {
-        set_point = set_point - 18432;
-        m_invert *= -1.0;
-    }
     else
-    {
-        m_invert = m_default_invert;
-    }
-    
-    
-    m_steer->Set(ControlMode::Position, set_point);
+        m_invert = 1.0;    
 
- 
+    m_steer->Set(ControlMode::Position, set_point + delta);
 }
 
 void SwerveModule::ZeroWheel()

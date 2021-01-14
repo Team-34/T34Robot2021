@@ -85,9 +85,9 @@ void SwerveDrive::Drive(double x, double y, double r)
     if (m_mode == DriveMode::FieldOriented && m_gyro != nullptr)
     {   
         double gyro_radians = deg_to_rad(m_gyro->GetYaw());
-        double temp = y * cos(gyro_radians) + x * sin(gyro_radians);
+        double temp_y = y * cos(gyro_radians) + x * sin(gyro_radians);
         x = -y * sin(gyro_radians) + x * cos(gyro_radians);
-        y = temp;       
+        y = temp_y;       
     }
     
     double a = (x - r) * FRAME_LENGTH_DIV_RATIO();

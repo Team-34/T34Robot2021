@@ -1,16 +1,6 @@
 See file:///D:/dev/T34Robot2021/build/tmp/compileFrcUserProgramDebugExecutableFrcUserProgramCpp/output.txt for all output for compileFrcUserProgramDebugExecutableFrcUserProgramCpp.
-compiling RampLimiter.cpp successful.
-
-compiling T34_XboxController.cpp successful.
+compiling SwerveModule.cpp successful.
 
 compiling SwerveDrive.cpp successful.
-
-compiling SwerveModule.cpp successful.
-D:\dev\T34Robot2021\src\main\cpp\subsystems\SwerveModule.cpp: In member function 'void SwerveModule::SetSteerPosition(const double&, double)':
-D:\dev\T34Robot2021\src\main\cpp\subsystems\SwerveModule.cpp:56:12: warning: unused variable 'current_position' [-Wunused-variable]
-     double current_position = m_steer->GetSensorCollection().GetIntegratedSensorPosition();
-            ^~~~~~~~~~~~~~~~
-
-compiling Robot.cpp successful.
 
 Finished compileFrcUserProgramDebugExecutableFrcUserProgramCpp, see full log file:///D:/dev/T34Robot2021/build/tmp/compileFrcUserProgramDebugExecutableFrcUserProgramCpp/output.txt.
