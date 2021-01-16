@@ -29,7 +29,6 @@ public:
     
     void Drive(double x, double y, double r);
 
-    void ZeroWheels();
 
 private:
     SwerveDrive();

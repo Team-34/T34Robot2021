@@ -35,7 +35,6 @@ void Robot::RobotInit()
     
     m_swerve_drive = SwerveDrive::GetInstance();
     m_swerve_drive->SetDriveMode(DriveMode::RobotCentric);
-    m_swerve_drive->ZeroWheels();
 }
 
 /**
@@ -61,34 +60,16 @@ void Robot::RobotPeriodic() {}
  */
 void Robot::AutonomousInit() 
 {
-    m_autoSelected = m_chooser.GetSelected();
-    // m_autoSelected = SmartDashboard::GetString("Auto Selector",
-    //     kAutoNameDefault);
-    std::cout << "Auto selected: " << m_autoSelected << std::endl;
 
-    if (m_autoSelected == kAutoNameCustom) 
-    {
-    // Custom Auto goes here
-    }
-    else 
-    {
-    // Default Auto goes here
-    }
 }
 
 void Robot::AutonomousPeriodic() 
 {
-    if (m_autoSelected == kAutoNameCustom) 
-    {
-    // Custom Auto goes here
-    }
-    else
-    {
-    // Default Auto goes here
-    }
+
 }
 
-void Robot::TeleopInit() {
+void Robot::TeleopInit() 
+{
     
 }
 

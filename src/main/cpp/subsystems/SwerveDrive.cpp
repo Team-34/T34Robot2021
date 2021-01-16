@@ -5,10 +5,10 @@
 std::unique_ptr<SwerveDrive> g_swerve_drive{ nullptr };
 
 SwerveDrive::SwerveDrive() 
-    : m_lf(SwerveModule(ID_LEFT_FWD_DRIVE, ID_LEFT_FWD_STEER, -1.0))
-    , m_la(SwerveModule(ID_LEFT_AFT_DRIVE, ID_LEFT_AFT_STEER, -1.0))
-    , m_rf(SwerveModule(ID_RIGHT_FWD_DRIVE, ID_RIGHT_FWD_STEER))
-    , m_ra(SwerveModule(ID_RIGHT_AFT_DRIVE, ID_RIGHT_AFT_STEER))
+    : m_lf(SwerveModule("Left_Front", ID_LEFT_FWD_DRIVE, ID_LEFT_FWD_STEER, -1.0))
+    , m_la(SwerveModule("Left Back", ID_LEFT_AFT_DRIVE, ID_LEFT_AFT_STEER, -1.0))
+    , m_rf(SwerveModule("Right_Front", ID_RIGHT_FWD_DRIVE, ID_RIGHT_FWD_STEER))
+    , m_ra(SwerveModule("Right_Back", ID_RIGHT_AFT_DRIVE, ID_RIGHT_AFT_STEER))
     , m_db(0.1)
 {
     m_gyro = new AHRS(frc::SPI::Port::kMXP);
@@ -69,7 +69,7 @@ void SwerveDrive::ToggleDriveBrake()
 
 void SwerveDrive::Drive(double x, double y, double r)
 {
-
+    //Deadband
     if (x < m_db && y < m_db && r < m_db)
     {
         m_lf.SetDriveSpeed(0.0);
@@ -122,12 +122,4 @@ void SwerveDrive::Drive(double x, double y, double r)
     m_rf.SetDriveSpeed(rf_drive_output);
     m_ra.SetDriveSpeed(ra_drive_output);
 
-}
-
-void SwerveDrive::ZeroWheels()
-{
-    m_lf.ZeroWheel();
-    m_la.ZeroWheel();
-    m_ra.ZeroWheel();
-    m_rf.ZeroWheel();
 }

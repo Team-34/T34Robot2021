@@ -15,53 +15,53 @@ c++
 -O2
 -nostdinc
 -I
-D:\\dev\\T34Robot2021\\src\\main\\include
+C:\\RobotCode\\T34Robot2021\\src\\main\\include
 -I
-C:\\Users\\mindsgate\\.gradle\\caches\\transforms-2\\files-2.1\\f30224df781d123c03103bde769be7b9\\navx-cpp-4.0.412-headers
+"C:\\Users\\FRC Team 34 Rockets\\.gradle\\caches\\transforms-2\\files-2.1\\c63394f4c48f32bdcad8b79596962c3f\\navx-cpp-4.0.412-headers"
 -I
-C:\\Users\\mindsgate\\.gradle\\caches\\transforms-2\\files-2.1\\88da88240b522bbb7ca6331690f02889\\wpiapi-cpp-5.19.4-headers
+"C:\\Users\\FRC Team 34 Rockets\\.gradle\\caches\\transforms-2\\files-2.1\\90d7afde07ba1be8b51c4c9df6c9819a\\wpiapi-cpp-5.19.4-headers"
 -I
-C:\\Users\\mindsgate\\.gradle\\caches\\transforms-2\\files-2.1\\2e8c2b7179e187160ff76b79fc0d9223\\api-cpp-5.19.4-headers
+"C:\\Users\\FRC Team 34 Rockets\\.gradle\\caches\\transforms-2\\files-2.1\\28e16b3f211e1e6967c0551343a18305\\api-cpp-5.19.4-headers"
 -I
-C:\\Users\\mindsgate\\.gradle\\caches\\transforms-2\\files-2.1\\70282b0872c889caa0db786939d4df74\\cci-5.19.4-headers
+"C:\\Users\\FRC Team 34 Rockets\\.gradle\\caches\\transforms-2\\files-2.1\\55202bd7ae5646e415abb3b0b0f541f3\\cci-5.19.4-headers"
 -I
-C:\\Users\\mindsgate\\.gradle\\caches\\transforms-2\\files-2.1\\20b49635867850908a0248e5a68c8dd9\\cci-sim-5.19.4-headers
+"C:\\Users\\FRC Team 34 Rockets\\.gradle\\caches\\transforms-2\\files-2.1\\f47e1c24f059248e73ed7562394e9aac\\cci-sim-5.19.4-headers"
 -I
-C:\\Users\\mindsgate\\.gradle\\caches\\transforms-2\\files-2.1\\b0d158725a562a8c32218976696e3f81\\diagnostics-5.19.4-headers
+"C:\\Users\\FRC Team 34 Rockets\\.gradle\\caches\\transforms-2\\files-2.1\\58a2fe25e7e962d1f41f1ab7455a70a4\\diagnostics-5.19.4-headers"
 -I
-C:\\Users\\mindsgate\\.gradle\\caches\\transforms-2\\files-2.1\\7596617ade1f24998580e278a3e37c6b\\canutils-5.19.4-headers
+"C:\\Users\\FRC Team 34 Rockets\\.gradle\\caches\\transforms-2\\files-2.1\\d77c7e5fbe3765045755446e40f53af1\\canutils-5.19.4-headers"
 -I
-C:\\Users\\mindsgate\\.gradle\\caches\\transforms-2\\files-2.1\\a2ed936538710bc266f687eba8d4aeda\\platform-sim-5.19.4-headers
+"C:\\Users\\FRC Team 34 Rockets\\.gradle\\caches\\transforms-2\\files-2.1\\0d0d7de1f461c5d7048ef60148b0a0e2\\platform-sim-5.19.4-headers"
 -I
-C:\\Users\\mindsgate\\.gradle\\caches\\transforms-2\\files-2.1\\533a1713f59664ac8a47105d7efa9251\\core-5.19.4-headers
+"C:\\Users\\FRC Team 34 Rockets\\.gradle\\caches\\transforms-2\\files-2.1\\b5fa0574c32a560913fafeb60ad5e50b\\core-5.19.4-headers"
 -I
-C:\\Users\\mindsgate\\.gradle\\caches\\transforms-2\\files-2.1\\ee93d72486d49800c9242d5f6399aa3f\\simTalonSRX-5.19.4-headers
+"C:\\Users\\FRC Team 34 Rockets\\.gradle\\caches\\transforms-2\\files-2.1\\54fb1967905e7f11896ee9b280f495f8\\simTalonSRX-5.19.4-headers"
 -I
-C:\\Users\\mindsgate\\.gradle\\caches\\transforms-2\\files-2.1\\b079e451894c1d4717801082f2ba511b\\simVictorSPX-5.19.4-headers
+"C:\\Users\\FRC Team 34 Rockets\\.gradle\\caches\\transforms-2\\files-2.1\\f6dcb15cf80a702d3eaab137db929cfc\\simVictorSPX-5.19.4-headers"
 -I
-C:\\Users\\mindsgate\\.gradle\\caches\\transforms-2\\files-2.1\\6be96df96a38b963f18b6d6c7e7f144c\\wpilibOldCommands-cpp-2021.1.2-headers
+"C:\\Users\\FRC Team 34 Rockets\\.gradle\\caches\\transforms-2\\files-2.1\\6be96df96a38b963f18b6d6c7e7f144c\\wpilibOldCommands-cpp-2021.1.2-headers"
 -I
-C:\\Users\\mindsgate\\.gradle\\caches\\transforms-2\\files-2.1\\c8a90f4e34412eb91233d26a46d5e20f\\wpilibc-cpp-2021.1.2-headers
+"C:\\Users\\FRC Team 34 Rockets\\.gradle\\caches\\transforms-2\\files-2.1\\c8a90f4e34412eb91233d26a46d5e20f\\wpilibc-cpp-2021.1.2-headers"
 -I
-C:\\Users\\mindsgate\\.gradle\\caches\\transforms-2\\files-2.1\\9955072513694bca83f00a50b454c5ae\\ntcore-cpp-2021.1.2-headers
+"C:\\Users\\FRC Team 34 Rockets\\.gradle\\caches\\transforms-2\\files-2.1\\9955072513694bca83f00a50b454c5ae\\ntcore-cpp-2021.1.2-headers"
 -I
-C:\\Users\\mindsgate\\.gradle\\caches\\transforms-2\\files-2.1\\32c7934b5d7dd4fcbc8aee3e85692e1a\\hal-cpp-2021.1.2-headers
+"C:\\Users\\FRC Team 34 Rockets\\.gradle\\caches\\transforms-2\\files-2.1\\32c7934b5d7dd4fcbc8aee3e85692e1a\\hal-cpp-2021.1.2-headers"
 -I
-C:\\Users\\mindsgate\\.gradle\\caches\\transforms-2\\files-2.1\\33aad2bf9ba43566b7e2e43ad25ac9b8\\wpiutil-cpp-2021.1.2-headers
+"C:\\Users\\FRC Team 34 Rockets\\.gradle\\caches\\transforms-2\\files-2.1\\33aad2bf9ba43566b7e2e43ad25ac9b8\\wpiutil-cpp-2021.1.2-headers"
 -I
-C:\\Users\\mindsgate\\.gradle\\caches\\transforms-2\\files-2.1\\48cb864223843444b53785ee4ca77c33\\wpimath-cpp-2021.1.2-headers
+"C:\\Users\\FRC Team 34 Rockets\\.gradle\\caches\\transforms-2\\files-2.1\\48cb864223843444b53785ee4ca77c33\\wpimath-cpp-2021.1.2-headers"
 -I
-C:\\Users\\mindsgate\\.gradle\\caches\\transforms-2\\files-2.1\\4b6192c384cf8473a9d086e6adb4b937\\chipobject-2020.10.1-headers
+"C:\\Users\\FRC Team 34 Rockets\\.gradle\\caches\\transforms-2\\files-2.1\\4b6192c384cf8473a9d086e6adb4b937\\chipobject-2020.10.1-headers"
 -I
-C:\\Users\\mindsgate\\.gradle\\caches\\transforms-2\\files-2.1\\cd1da3a238ebc04371ef638a62a8c4a8\\netcomm-2020.10.1-headers
+"C:\\Users\\FRC Team 34 Rockets\\.gradle\\caches\\transforms-2\\files-2.1\\cd1da3a238ebc04371ef638a62a8c4a8\\netcomm-2020.10.1-headers"
 -I
-C:\\Users\\mindsgate\\.gradle\\caches\\transforms-2\\files-2.1\\cca00724dbd9d228d2bdefb7d7faaa8d\\visa-2020.10.1-headers
+"C:\\Users\\FRC Team 34 Rockets\\.gradle\\caches\\transforms-2\\files-2.1\\cca00724dbd9d228d2bdefb7d7faaa8d\\visa-2020.10.1-headers"
 -I
-C:\\Users\\mindsgate\\.gradle\\caches\\transforms-2\\files-2.1\\24bf551864a8289c82c07473de3272f8\\cameraserver-cpp-2021.1.2-headers
+"C:\\Users\\FRC Team 34 Rockets\\.gradle\\caches\\transforms-2\\files-2.1\\24bf551864a8289c82c07473de3272f8\\cameraserver-cpp-2021.1.2-headers"
 -I
-C:\\Users\\mindsgate\\.gradle\\caches\\transforms-2\\files-2.1\\f7a08876b3546a7a07521c05a2586095\\cscore-cpp-2021.1.2-headers
+"C:\\Users\\FRC Team 34 Rockets\\.gradle\\caches\\transforms-2\\files-2.1\\f7a08876b3546a7a07521c05a2586095\\cscore-cpp-2021.1.2-headers"
 -I
-C:\\Users\\mindsgate\\.gradle\\caches\\transforms-2\\files-2.1\\67a79c1c661a84cbc99042d108434bbc\\opencv-cpp-3.4.7-5-headers
+"C:\\Users\\FRC Team 34 Rockets\\.gradle\\caches\\transforms-2\\files-2.1\\67a79c1c661a84cbc99042d108434bbc\\opencv-cpp-3.4.7-5-headers"
 -isystem
 c:\\users\\public\\wpilib\\2021\\roborio\\bin\\..\\arm-frc2021-linux-gnueabi\\usr\\lib\\gcc\\arm-frc2021-linux-gnueabi\\7.3.0\\include
 -isystem
