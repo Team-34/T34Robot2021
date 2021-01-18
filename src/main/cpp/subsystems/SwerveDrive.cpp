@@ -11,9 +11,11 @@ SwerveDrive::SwerveDrive()
     , m_rf(SwerveModule("Right_Front", ID_RIGHT_FWD_DRIVE, ID_RIGHT_FWD_STEER))
     , m_ra(SwerveModule("Right_Back", ID_RIGHT_AFT_DRIVE, ID_RIGHT_AFT_STEER))
     , m_db(0.1)
+    , m_speed(1.0)
 {
     m_gyro = new AHRS(frc::SPI::Port::kMXP);
     PutMode();
+    frc::SmartDashboard::PutBoolean("High Speed", true);
 }
 
 SwerveDrive * SwerveDrive::GetInstance()
@@ -62,6 +64,7 @@ void SwerveDrive::SetDriveBrake(bool on)
     m_la.SetDriveBrake(on);
     m_rf.SetDriveBrake(on);
     m_ra.SetDriveBrake(on);
+
 }
 
 void SwerveDrive::ToggleDriveBrake()
@@ -70,6 +73,7 @@ void SwerveDrive::ToggleDriveBrake()
     m_la.ToggleDriveBrake();
     m_rf.ToggleDriveBrake();
     m_ra.ToggleDriveBrake();
+
 }
 
 void SwerveDrive::Drive(double x, double y, double r)
@@ -87,6 +91,7 @@ void SwerveDrive::Drive(double x, double y, double r)
 
     x *= -1;
     y *= -1;
+
     
     if (m_mode == DriveMode::FieldOriented && m_gyro != nullptr)
     {   
@@ -123,10 +128,10 @@ void SwerveDrive::Drive(double x, double y, double r)
         ra_drive_output /= do_max;
     }
 
-    m_lf.SetDriveSpeed(lf_drive_output);
-    m_la.SetDriveSpeed(la_drive_output);
-    m_rf.SetDriveSpeed(rf_drive_output);
-    m_ra.SetDriveSpeed(ra_drive_output);
+    m_lf.SetDriveSpeed(lf_drive_output * m_speed);
+    m_la.SetDriveSpeed(la_drive_output * m_speed);
+    m_rf.SetDriveSpeed(rf_drive_output * m_speed);
+    m_ra.SetDriveSpeed(ra_drive_output * m_speed);
 
 }
 
@@ -148,4 +153,20 @@ void SwerveDrive::PutMode()
 {
     frc::SmartDashboard::PutString("Drive Mode ",
         m_mode == DriveMode::RobotCentric ? "Robot Centric" : "Field Oriented");
+
+}
+
+void SwerveDrive::ToggleSpeed()
+{
+    if (m_speed == 0.5)
+    {
+        m_speed = 1.0;
+        frc::SmartDashboard::PutBoolean("High Speed", true);
+    }
+    else 
+    {
+        m_speed = 0.5;
+        frc::SmartDashboard::PutBoolean("High Speed", false);
+    }
+
 }

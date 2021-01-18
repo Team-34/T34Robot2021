@@ -80,15 +80,15 @@ void Robot::TeleopPeriodic()
         m_swerve_drive->ToggleDriveMode();
         
     if (m_driver_ctrl->GetYButtonReleased())
-        m_swerve_drive->ToggleDriveBrake();
+        m_swerve_drive->ToggleSpeed();
 
-    if(m_driver_ctrl->GetBButtonReleased())
+    if (m_driver_ctrl->GetBButtonReleased())
     {
         m_sheild_wall_on = !m_sheild_wall_on;
-        if(m_sheild_wall_on)
+        if (m_sheild_wall_on)
            m_swerve_drive->Sheild_Wall();
     }
-        
+
     if (m_driver_ctrl->GetXButtonReleased())
     {
         m_ramp_limiter_on = !m_ramp_limiter_on;

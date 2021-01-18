@@ -1,4 +1,19 @@
 See file:///C:/RobotCode/T34Robot2021/build/tmp/compileFrcUserProgramDebugExecutableFrcUserProgramCpp/output.txt for all output for compileFrcUserProgramDebugExecutableFrcUserProgramCpp.
+compiling SwerveModule.cpp successful.
+
 compiling SwerveDrive.cpp successful.
+
+compiling Robot.cpp successful.
+In file included from C:\RobotCode\T34Robot2021\src\main\cpp\Robot.cpp:1:0:
+C:\RobotCode\T34Robot2021\src\main\include/Robot.h: In constructor 'Robot::Robot()':
+C:\RobotCode\T34Robot2021\src\main\include/Robot.h:41:17: warning: 'Robot::m_r_limiter' will be initialized after [-Wreorder]
+     RampLimiter m_r_limiter;
+                 ^~~~~~~~~~~
+C:\RobotCode\T34Robot2021\src\main\include/Robot.h:36:10: warning:   'bool Robot::m_sheild_wall_on' [-Wreorder]
+     bool m_sheild_wall_on;
+          ^~~~~~~~~~~~~~~~
+C:\RobotCode\T34Robot2021\src\main\cpp\Robot.cpp:7:1: warning:   when initialized here [-Wreorder]
+ Robot::Robot()
+ ^~~~~
 
 Finished compileFrcUserProgramDebugExecutableFrcUserProgramCpp, see full log file:///C:/RobotCode/T34Robot2021/build/tmp/compileFrcUserProgramDebugExecutableFrcUserProgramCpp/output.txt.

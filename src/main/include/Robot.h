@@ -35,6 +35,7 @@ private:
 
     bool m_sheild_wall_on;
     bool m_ramp_limiter_on;
+    
     RampLimiter m_x_limiter;
     RampLimiter m_y_limiter;
     RampLimiter m_r_limiter;    

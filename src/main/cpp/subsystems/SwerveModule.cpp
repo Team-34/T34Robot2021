@@ -52,6 +52,8 @@ void SwerveModule::ToggleDriveBrake()
 
 void SwerveModule::SetDriveSpeed(const double & speed)
 {
+    frc::SmartDashboard::PutNumber("Drive Speed ", (m_invert * speed));
+    
     m_drive->Set(ControlMode::PercentOutput, m_invert * speed);
 }
 
@@ -62,7 +64,7 @@ void SwerveModule::SetSteerPosition(const double & position, double offset)
     double delta = fmod(set_point - current_position, FULL_UNITS);
 
     //Calculating Shortest Distance
-    if(fabs(delta > 9216.0))
+    if (fabs(delta > 9216.0))
     {
         delta -= copysign(18432.0, delta);
         m_invert = -1.0;

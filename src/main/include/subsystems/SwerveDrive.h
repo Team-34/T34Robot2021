@@ -29,6 +29,7 @@ public:
     
     void Drive(double x, double y, double r);
     void Sheild_Wall();
+    void ToggleSpeed();
 
 
 private:
@@ -43,5 +44,6 @@ private:
     SwerveModule m_rf;
     SwerveModule m_ra;
     double m_db;
+    double m_speed;
 
 };
