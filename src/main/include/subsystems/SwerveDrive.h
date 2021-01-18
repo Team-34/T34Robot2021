@@ -28,10 +28,12 @@ public:
     void ToggleDriveBrake();
     
     void Drive(double x, double y, double r);
+    void Sheild_Wall();
 
 
 private:
     SwerveDrive();
+    void PutMode();
 
     AHRS * m_gyro;
     DriveMode m_mode;
@@ -41,4 +43,5 @@ private:
     SwerveModule m_rf;
     SwerveModule m_ra;
     double m_db;
+
 };

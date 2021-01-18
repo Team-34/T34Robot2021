@@ -1,6 +1,7 @@
 #include <memory>
 #include "subsystems/SwerveMath.h"
 #include "subsystems/SwerveDrive.h"
+#include <frc/smartdashboard/SmartDashboard.h>
 
 std::unique_ptr<SwerveDrive> g_swerve_drive{ nullptr };
 
@@ -12,6 +13,7 @@ SwerveDrive::SwerveDrive()
     , m_db(0.1)
 {
     m_gyro = new AHRS(frc::SPI::Port::kMXP);
+    PutMode();
 }
 
 SwerveDrive * SwerveDrive::GetInstance()
@@ -41,6 +43,7 @@ void SwerveDrive::ZeroYaw()
 void SwerveDrive::SetDriveMode(DriveMode dm)
 {
     m_mode = dm;
+    PutMode();
 }
 
 void SwerveDrive::ToggleDriveMode()
@@ -49,6 +52,8 @@ void SwerveDrive::ToggleDriveMode()
         m_mode = DriveMode::FieldOriented;
     else
         m_mode = DriveMode::RobotCentric;
+        
+    PutMode();
 }
 
 void SwerveDrive::SetDriveBrake(bool on)
@@ -70,7 +75,8 @@ void SwerveDrive::ToggleDriveBrake()
 void SwerveDrive::Drive(double x, double y, double r)
 {
     //Deadband
-    if (x < m_db && y < m_db && r < m_db)
+    
+    if (fabs(x) < m_db && fabs(y) < m_db && fabs(r) < m_db)
     {
         m_lf.SetDriveSpeed(0.0);
         m_la.SetDriveSpeed(0.0);
@@ -122,4 +128,24 @@ void SwerveDrive::Drive(double x, double y, double r)
     m_rf.SetDriveSpeed(rf_drive_output);
     m_ra.SetDriveSpeed(ra_drive_output);
 
+}
+
+void SwerveDrive::Sheild_Wall()
+{
+    m_lf.SetDriveSpeed(0.0);
+    m_la.SetDriveSpeed(0.0);
+    m_rf.SetDriveSpeed(0.0);
+    m_ra.SetDriveSpeed(0.0);
+
+    m_lf.SetSteerPosition(_315_DEG);
+    m_la.SetSteerPosition(_135_DEG);
+    m_rf.SetSteerPosition(_135_DEG);
+    m_ra.SetSteerPosition(_315_DEG);
+
+}
+
+void SwerveDrive::PutMode()
+{
+    frc::SmartDashboard::PutString("Drive Mode ",
+        m_mode == DriveMode::RobotCentric ? "Robot Centric" : "Field Oriented");
 }

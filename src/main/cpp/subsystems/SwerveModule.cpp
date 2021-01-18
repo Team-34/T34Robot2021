@@ -14,7 +14,7 @@ SwerveModule::SwerveModule(std::string name, const int drive_id, const int steer
     m_steer->ConfigSelectedFeedbackSensor(FeedbackDevice::IntegratedSensor, 0, 0);
     m_steer->ConfigIntegratedSensorAbsoluteRange(AbsoluteSensorRange::Signed_PlusMinus180);
     m_steer->SetInverted(false);
-    m_steer->Config_kD(0, 0.1, 0);
+    m_steer->Config_kD(0, 0.05, 0);
 
     m_drive->SetNeutralMode(NeutralMode::Brake);
     m_drive_brake_on = true;
@@ -60,7 +60,7 @@ void SwerveModule::SetSteerPosition(const double & position, double offset)
     double current_position = m_steer->GetSensorCollection().GetIntegratedSensorPosition();
     double set_point = (((position + offset) + 180) / 360.0) * FULL_UNITS;
     double delta = fmod(set_point - current_position, FULL_UNITS);
-    
+
     //Calculating Shortest Distance
     if(fabs(delta > 9216.0))
     {
@@ -71,6 +71,7 @@ void SwerveModule::SetSteerPosition(const double & position, double offset)
     {
         m_invert = 1.0;
     }
+    
     
     m_steer->Set(ControlMode::Position, current_position + delta);
 }

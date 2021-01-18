@@ -13,6 +13,11 @@ constexpr double FULL_UNITS{ 36864.0 };
 constexpr double FRAME_LENGTH{ 29.0 };
 constexpr double FRAME_WIDTH{ 29.0 };
 
+constexpr double _45_DEG( 4608.0);
+constexpr double _135_DEG( 3 * 4608.0); 
+constexpr double _225_DEG( 5 * 4608.0);
+constexpr double _315_DEG( 7 * 4608.0);
+
 constexpr double RATIO() 
         { 
             return sqrt(

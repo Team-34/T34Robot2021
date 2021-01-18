@@ -9,6 +9,7 @@ Robot::Robot()
     , m_x_limiter(RAMP_LIMIT_X)
     , m_y_limiter(RAMP_LIMIT_Y)
     , m_r_limiter(RAMP_LIMIT_R)
+    , m_sheild_wall_on(false)
 {
 }
 
@@ -80,6 +81,13 @@ void Robot::TeleopPeriodic()
         
     if (m_driver_ctrl->GetYButtonReleased())
         m_swerve_drive->ToggleDriveBrake();
+
+    if(m_driver_ctrl->GetBButtonReleased())
+    {
+        m_sheild_wall_on = !m_sheild_wall_on;
+        if(m_sheild_wall_on)
+           m_swerve_drive->Sheild_Wall();
+    }
         
     if (m_driver_ctrl->GetXButtonReleased())
     {
@@ -94,15 +102,18 @@ void Robot::TeleopPeriodic()
         
     if (m_driver_ctrl->GetBackButtonReleased())
         m_swerve_drive->ZeroYaw();
-       
-    if (m_ramp_limiter_on)
-        m_swerve_drive->Drive(m_x_limiter.Calculate(m_driver_ctrl->GetLeftStickXDB()), 
-                              m_y_limiter.Calculate(m_driver_ctrl->GetLeftStickYDB()), 
-                              m_r_limiter.Calculate(m_driver_ctrl->GetTriggersCoercedDB()));
-    else
-        m_swerve_drive->Drive(m_driver_ctrl->GetLeftStickXDB(), 
-                              m_driver_ctrl->GetLeftStickYDB(), 
-                              m_driver_ctrl->GetTriggersCoercedDB());
+
+    if (!m_sheild_wall_on)
+    {
+        if (m_ramp_limiter_on)
+            m_swerve_drive->Drive(m_x_limiter.Calculate(m_driver_ctrl->GetLeftStickXDB()), 
+                                m_y_limiter.Calculate(m_driver_ctrl->GetLeftStickYDB()), 
+                                m_r_limiter.Calculate(m_driver_ctrl->GetTriggersCoercedDB()));
+        else
+            m_swerve_drive->Drive(m_driver_ctrl->GetLeftStickXDB(), 
+                                m_driver_ctrl->GetLeftStickYDB(), 
+                                m_driver_ctrl->GetTriggersCoercedDB());
+    }
                               
 }
 

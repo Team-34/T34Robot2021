@@ -32,7 +32,8 @@ private:
     SwerveDrive * m_swerve_drive;
     T34_XboxController * m_driver_ctrl;
     T34_XboxController * m_mech_ctrl;
-    
+
+    bool m_sheild_wall_on;
     bool m_ramp_limiter_on;
     RampLimiter m_x_limiter;
     RampLimiter m_y_limiter;
